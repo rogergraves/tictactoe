@@ -17,9 +17,8 @@ $(document).ready(function(){
     if(cell.html() === '#') {
       // All good!
       cell.html('X');
-      
-      dumb_computer_move();
-      detect_a_winner();
+      setTimeout(dumb_computer_move, 200);
+      setTimeout(detect_a_winner, 300);
     } else {
       // Nah... They clicked on something that already had an X or an O
       alert('No way hombre... That is CHEATING!');
@@ -64,22 +63,22 @@ $(document).ready(function(){
   function detect_a_winner() {
     let the_winner = '#';
 
-    if($('#7').html() === $('#8').html() === $('#9').html() !== '#') { // across top
-      the_winner = $('#7').html();
-    } else if($('#4').html() === $('#5').html() === $('#6').html() !== '#') { // across middle
-      the_winner = $('#4').html();
-    } else if($('#1').html() === $('#2').html() === $('#3').html() !== '#') { // across bottom
-      the_winner = $('#1').html();
-    } else if($('#1').html() === $('#4').html() === $('#7').html() !== '#') { // down left
-      the_winner = $('#1').html();
-    } else if($('#2').html() === $('#5').html() === $('#8').html() !== '#') { // down middle
-      the_winner = $('#2').html();
-    } else if($('#3').html() === $('#6').html() === $('#9').html() !== '#') { // down right
+    if(is_a_match($('#0'), $('#1'), $('#2'))) { // across top
+      the_winner = $('#0').html();
+    } else if(is_a_match($('#3'), $('#4'), $('#5'))) { // across middle
       the_winner = $('#3').html();
-    } else if($('#7').html() === $('#5').html() === $('#3').html() !== '#') { // diagonal
-      the_winner = $('#7').html();
-    } else if($('#1').html() === $('#5').html() === $('#9').html() !== '#') { // diagonal
+    } else if(is_a_match($('#6'), $('#7'), $('#8'))) { // across bottom
+      the_winner = $('#6').html();
+    } else if(is_a_match($('#0'), $('#3'), $('#6'))) { // down left
+      the_winner = $('#0').html();
+    } else if(is_a_match($('#1'), $('#4'), $('#7'))) { // down middle
       the_winner = $('#1').html();
+    } else if(is_a_match($('#2'), $('#5'), $('#8'))) { // down right
+      the_winner = $('#2').html();
+    } else if(is_a_match($('#0'), $('#4'), $('#8'))) { // diagonal
+      the_winner = $('#0').html();
+    } else if(is_a_match($('#2'), $('#4'), $('#6'))) { // diagonal
+      the_winner = $('#2').html();
     }
 
     if(the_winner === 'X') {
@@ -89,5 +88,12 @@ $(document).ready(function(){
       alert('Uh... um... yeah, that happened.')
       reset_board_with_pound_signs()
     }
+  }
+  
+  function is_a_match(cell1, cell2, cell3) {
+    if(cell1.html() === cell2.html() && cell2.html() === cell3.html() && cell3.html() !== '#') {
+      return(true);
+    } else
+      return(false);
   }
 });
