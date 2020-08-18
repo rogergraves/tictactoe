@@ -17,6 +17,7 @@ $(document).ready(function(){
     if(cell.html() === '#') {
       // All good!
       cell.html('X');
+      dumb_computer_move();
     } else {
       // Nah... They clicked on something that already had an X or an O
       alert('No way hombre... That is CHEATING!');
@@ -40,4 +41,21 @@ $(document).ready(function(){
     // This will get triggered every time someone clicks on reset
     reset_board_with_pound_signs();
   });
+
+  function dumb_computer_move() {
+    let i = 0;
+    while(i <= 10) {
+      const this_cell = $('#'+i);
+
+      if(this_cell.html() === '#') {
+        // We could click on this one
+        if(Math.random() > .3) {
+          this_cell.html('O'); // Let's choose this one!!!!
+          break; // We're outta here
+        }
+      }
+
+      ++i; // Increases the value if i by +1
+    }
+  }
 });
