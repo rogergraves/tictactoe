@@ -22,4 +22,22 @@ $(document).ready(function(){
       alert('No way hombre... That is CHEATING!');
     }
   }
+
+  function reset_board_with_pound_signs() {
+    $('#0').html('#');
+    $('#1').html('#');
+    $('#2').html('#');
+    $('#3').html('#');
+    $('#4').html('#');
+    $('#5').html('#');
+    $('#6').html('#');
+    $('#7').html('#');
+    $('#8').html('#');
+    $('#9').html('#');
+  }
+
+  $('#reset').click(function(e) {
+    // This will get triggered every time someone clicks on reset
+    reset_board_with_pound_signs();
+  });
 });
