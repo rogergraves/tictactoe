@@ -17,7 +17,9 @@ $(document).ready(function(){
     if(cell.html() === '#') {
       // All good!
       cell.html('X');
+      
       dumb_computer_move();
+      detect_a_winner();
     } else {
       // Nah... They clicked on something that already had an X or an O
       alert('No way hombre... That is CHEATING!');
@@ -56,6 +58,36 @@ $(document).ready(function(){
       }
 
       ++i; // Increases the value if i by +1
+    }
+  }
+
+  function detect_a_winner() {
+    let the_winner = '#';
+
+    if($('#7').html() === $('#8').html() === $('#9').html() !== '#') { // across top
+      the_winner = $('#7').html();
+    } else if($('#4').html() === $('#5').html() === $('#6').html() !== '#') { // across middle
+      the_winner = $('#4').html();
+    } else if($('#1').html() === $('#2').html() === $('#3').html() !== '#') { // across bottom
+      the_winner = $('#1').html();
+    } else if($('#1').html() === $('#4').html() === $('#7').html() !== '#') { // down left
+      the_winner = $('#1').html();
+    } else if($('#2').html() === $('#5').html() === $('#8').html() !== '#') { // down middle
+      the_winner = $('#2').html();
+    } else if($('#3').html() === $('#6').html() === $('#9').html() !== '#') { // down right
+      the_winner = $('#3').html();
+    } else if($('#7').html() === $('#5').html() === $('#3').html() !== '#') { // diagonal
+      the_winner = $('#7').html();
+    } else if($('#1').html() === $('#5').html() === $('#9').html() !== '#') { // diagonal
+      the_winner = $('#1').html();
+    }
+
+    if(the_winner === 'X') {
+      alert('Congrats!!! You beat a dumb computer! Woohoo!');
+      reset_board_with_pound_signs()
+    } else if(the_winner === 'O') {
+      alert('Uh... um... yeah, that happened.')
+      reset_board_with_pound_signs()
     }
   }
 });
