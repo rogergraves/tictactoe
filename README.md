@@ -7,3 +7,4 @@
 4. Create listener for the Reset button and create function that clears the board. [commit link](https://github.com/rogergraves/tictactoe/commit/0232de53571ad7ed98b90e7c7129b850022b7432)
 5. Create function that randomly selects a free space for the computer player to choose. [commit link](https://github.com/rogergraves/tictactoe/commit/2579a455463c43aed6337897c26f67fc57a2c42b)
 6. Create a function that detects if somebody wins. [commit link](https://github.com/rogergraves/tictactoe/commit/7ad7ac4df62ccab68727895039165c9972d2fdd3)
+7. If things don't work properly (hey, this is Javascript after all) then fix bugs. [commit link](https://github.com/rogergraves/tictactoe/commit/6ad7d6989e07cfaa1d52880e5be0c345536e5687)
