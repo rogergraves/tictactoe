@@ -23,8 +23,9 @@ The above code will give 2 alerts, "Bob is cool" and "Jill is cool".
 ## jQuery
 jQuery adds a bunch of functions to Javascript to make it suck less. Below are some things that are used in our code.
 
-#### Address to Something
+#### Addresses
 `$('.something')` will return an array of things that have `<... class="something">`.
+
 `$('#something')` will return the object that has `<... id="something">`.
 
 #### Changing the value of something in HTML
