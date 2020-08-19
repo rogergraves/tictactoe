@@ -24,13 +24,13 @@ The above code will give 2 alerts, "Bob is cool" and "Jill is cool".
 jQuery adds a bunch of functions to Javascript to make it suck less. Below are some things that are used in our code.
 
 #### Addresses
-`$('.something')` will return an array of things that have `<... class="something">`.
+`$('.something')` let's you do things to anything that has a class called "something", for example `<div class="something" \>`.
 
-`$('#something')` will return the object that has `<... id="something">`.
+`$('#something')` let's you do things to whatever has an ID of "something", for example `<div id="something" \>`.
 
 #### Changing the value of something in HTML
 If we have `<div id="name">Bob</div>`
-`$('#name').html('Jill');` will change "Bob" to "Jill". Anything inside the tag will get replaced.
+`$('#name').html('Jill');` will change "Bob" to "Jill".
 
 
 #### Listeners
