@@ -30,6 +30,7 @@ jQuery adds a bunch of functions to Javascript to make it suck less. Below are s
 
 #### Changing the value of something in HTML
 If we have `<div id="name">Bob</div>`
+
 `$('#name').html('Jill');` will change "Bob" to "Jill".
 
 
